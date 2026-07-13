@@ -1,0 +1,6 @@
+- [ ] Upgrade `src/ProductsPage.jsx` to become “Menu Produk” page (front-end only)
+- [ ] Implement UI: header, toolbar (search + category filter), grid/table toggle
+- [ ] Implement dummy product data + local state
+- [ ] Implement modal for tambah/edit produk
+- [ ] Implement delete confirmation (front-end only)
+- [ ] Run `npm test`/`npm run dev` or `npm run build` to verify no compile errors

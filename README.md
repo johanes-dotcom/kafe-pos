@@ -83,9 +83,11 @@ npm run preview
 - React Router DOM
 - Axios
 
-## 📸 Screenshot
+## dashboard Admin
 
 <img width="1536" height="1024" alt="Dasbord" src="https://github.com/user-attachments/assets/89cd2ea0-1479-4143-b5e1-2361ed0fd661" />
+
+dashboard Kasir
 
 <img width="1536" height="1024" alt="ChatGPT Image 14 Jul 2026, 20 29 35" src="https://github.com/user-attachments/assets/55de6142-9148-4c72-b4e7-b7e007bfd4e6" />
 

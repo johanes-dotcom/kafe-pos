@@ -61,7 +61,7 @@ function App() {
                   onClick={() => navigate("/login")}
                   className="bg-white hover:bg-gray-50 text-gray-900 font-bold py-2 px-5 rounded-xl border border-gray-200 transition duration-300 shadow-sm"
                 >
-                  Coba Login
+                  Login
                 </button>
               </div>
             </div>

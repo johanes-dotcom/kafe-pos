@@ -12,6 +12,12 @@ import ReportsPage from "./ReportsPage";
 import UsersPage from "./UsersPage";
 import ProfilePage from "./ProfilePage";
 import SettingsPage from "./SettingsPage";
+import CashierDashboardPage from "./pages/cashier/CashierDashboardPage";
+import CashierTransactionsPage from "./pages/cashier/CashierTransactionsPage";
+import CashierHistoryPage from "./pages/cashier/CashierHistoryPage";
+import CashierProfilePage from "./pages/cashier/CashierProfilePage";
+import RequireRole from "./components/RequireRole";
+
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +30,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardPage />,
+    element: (
+      <RequireRole role="admin">
+        <DashboardPage />
+      </RequireRole>
+    ),
     children: [
       { index: true, element: <DashboardHomePage /> },
       { path: "products", element: <ProductsPage /> },
@@ -37,5 +47,37 @@ export const router = createBrowserRouter([
       { path: "profile", element: <ProfilePage /> },
       { path: "settings", element: <SettingsPage /> },
     ],
+  },
+  {
+    path: "/cashier",
+    element: (
+      <RequireRole role="cashier">
+        <CashierDashboardPage />
+      </RequireRole>
+    ),
+  },
+  {
+    path: "/cashier/transactions",
+    element: (
+      <RequireRole role="cashier">
+        <CashierTransactionsPage />
+      </RequireRole>
+    ),
+  },
+  {
+    path: "/cashier/history",
+    element: (
+      <RequireRole role="cashier">
+        <CashierHistoryPage />
+      </RequireRole>
+    ),
+  },
+  {
+    path: "/cashier/profile",
+    element: (
+      <RequireRole role="cashier">
+        <CashierProfilePage />
+      </RequireRole>
+    ),
   },
 ]);

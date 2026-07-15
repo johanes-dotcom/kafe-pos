@@ -1,32 +1,27 @@
 import { useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
-  MdOutlineDashboard,
-  MdOutlineShoppingBag,
-  MdOutlineCategory,
-  MdOutlineTableRestaurant,
-  MdOutlinePeopleAlt,
-  MdOutlineReceiptLong,
-  MdOutlineAccountCircle,
-  MdOutlineSettings,
-  MdOutlineLogout,
-} from "react-icons/md";
+  LayoutDashboard,
+  ShoppingBag,
+  History,
+  UserRound,
+  LogOut,
+} from "lucide-react";
 
-
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const menuItems = [
-  { label: "Dashboard", icon: MdOutlineDashboard, to: "/dashboard" },
-  { label: "Menu Produk", icon: MdOutlineShoppingBag, to: "/dashboard/products" },
-  { label: "Kategori", icon: MdOutlineCategory, to: "/dashboard/categories" },
-  { label: "Meja", icon: MdOutlineTableRestaurant, to: "/dashboard/tables" },
-  { label: "Pelanggan", icon: MdOutlinePeopleAlt, to: "/dashboard/customers" },
-  { label: "Laporan", icon: MdOutlineReceiptLong, to: "/dashboard/reports" },
-  { label: "Pengguna", icon: MdOutlineAccountCircle, to: "/dashboard/users" },
-  { label: "Pengaturan", icon: MdOutlineSettings, to: "/dashboard/settings" },
+  { label: "Dashboard", icon: LayoutDashboard, to: "/cashier" },
+  { label: "Transaksi", icon: ShoppingBag, to: "/cashier/transactions" },
+  {
+    label: "Riwayat Transaksi",
+    icon: History,
+    to: "/cashier/history",
+  },
+  { label: "Profil", icon: UserRound, to: "/cashier/profile" },
 ];
 
-function Sidebar({ isCollapsed = false, onLogout }) {
+function SidebarCashier({ onLogout, isCollapsed = false }) {
   const location = useLocation();
 
   const activeLabel = useMemo(() => {
@@ -49,7 +44,7 @@ function Sidebar({ isCollapsed = false, onLogout }) {
           </div>
           <div className="leading-tight">
             <p className="font-extrabold text-mokkaDark">Caffe Moka</p>
-            <p className="text-xs text-gray-500">Modern Coffee POS</p>
+            <p className="text-xs text-gray-500">CafePOS Kasir</p>
           </div>
         </div>
       </div>
@@ -86,7 +81,7 @@ function Sidebar({ isCollapsed = false, onLogout }) {
           onClick={onLogout}
           className="w-full flex items-center gap-3 rounded-2xl px-3 py-2 text-sm font-semibold transition duration-300 hover:bg-mokkaCoffee/10"
         >
-          <MdOutlineLogout className="text-xl text-mokkaCoffee" />
+          <LogOut className="text-xl text-mokkaCoffee" />
           <span className="text-gray-800">Logout</span>
         </button>
 
@@ -98,4 +93,5 @@ function Sidebar({ isCollapsed = false, onLogout }) {
   );
 }
 
-export default Sidebar;
+export default SidebarCashier;
+

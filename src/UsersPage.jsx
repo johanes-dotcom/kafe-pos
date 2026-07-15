@@ -7,8 +7,9 @@ const initialUsers = [
 ];
 
 const UsersPage = () => {
-  const [users, setUsers] = useState(initialUsers);
+  const [users] = useState(initialUsers);
   const [query, setQuery] = useState("");
+
 
   const filteredUsers = useMemo(() => {
     const q = query.trim().toLowerCase();

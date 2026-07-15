@@ -14,8 +14,9 @@ function formatRupiah(amount) {
 }
 
 const TransactionsPage = () => {
-  const [transactions, setTransactions] = useState(initialTransactions);
+  const [transactions] = useState(initialTransactions);
   const [query, setQuery] = useState("");
+
 
   const filteredTransactions = useMemo(() => {
     const q = query.trim().toLowerCase();

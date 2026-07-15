@@ -1,14 +1,10 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
-import StatCard from "./components/StatCard";
-import SalesChart from "./components/SalesChart";
-import TopSelling from "./components/TopSelling";
-import CategoryChart from "./components/CategoryChart";
-import RecentTransactions from "./components/RecentTransactions";
+
 
 const DashboardPage = () => {
   const navigate = useNavigate();
